@@ -3,6 +3,7 @@ package com.chefsdelights.farmersrespite.integration.emi;
 import com.chefsdelights.farmersrespite.common.crafting.KettleRecipe;
 import com.chefsdelights.farmersrespite.core.FarmersRespite;
 import com.google.common.collect.ImmutableList;
+import dev.emi.emi.api.recipe.FabricEmiStack;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
