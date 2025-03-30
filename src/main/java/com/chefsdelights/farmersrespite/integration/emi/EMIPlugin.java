@@ -1,13 +1,13 @@
 package com.chefsdelights.farmersrespite.integration.emi;
 
-import com.chefsdelights.farmersrespite.common.crafting.KettleRecipe;
-import com.chefsdelights.farmersrespite.core.FarmersRespite;
-import com.chefsdelights.farmersrespite.core.registry.FRItems;
-import com.chefsdelights.farmersrespite.core.registry.FRRecipeSerializers;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiStack;
+import com.chefsdelights.farmersrespite.core.FarmersRespite;
+import com.chefsdelights.farmersrespite.common.crafting.KettleRecipe;
+import com.chefsdelights.farmersrespite.core.registry.FRItems;
+import com.chefsdelights.farmersrespite.core.registry.FRRecipeSerializers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
 

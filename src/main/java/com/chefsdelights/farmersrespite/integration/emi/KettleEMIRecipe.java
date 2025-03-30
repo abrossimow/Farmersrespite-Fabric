@@ -1,15 +1,13 @@
 package com.chefsdelights.farmersrespite.integration.emi;
 
-import com.chefsdelights.farmersrespite.common.crafting.KettleRecipe;
-import com.chefsdelights.farmersrespite.core.FarmersRespite;
-import com.google.common.collect.ImmutableList;
-import dev.emi.emi.api.recipe.FabricEmiStack;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.api.widget.WidgetHolder;
-import net.minecraft.client.Minecraft;
+import com.chefsdelights.farmersrespite.common.crafting.KettleRecipe;
+import com.chefsdelights.farmersrespite.core.FarmersRespite;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,17 +17,16 @@ import java.util.List;
 public class KettleEMIRecipe implements EmiRecipe {
     private static final ResourceLocation GUI_TEXTURE = new ResourceLocation(FarmersRespite.MOD_ID, "textures/gui/rei/kettle_rei.png");
     private final ResourceLocation id;
-
-    private final EmiIngredient containerOutput;
-    private final List<EmiIngredient> ingredient;
+    final EmiIngredient containerOutput;
+    final List<EmiIngredient> ingredient;
     private final int brewTime;
     private final boolean needWater;
-    private final EmiStack output;
+    final EmiStack output;
 
     public KettleEMIRecipe(KettleRecipe recipe) {
         this.id = recipe.getId();
         this.ingredient = recipe.getIngredients().stream().map(EmiIngredient::of).toList();
-        this.output = EmiStack.of(recipe.getResultItem(null));
+        this.output = EmiStack.of(recipe.output);
         this.containerOutput = EmiStack.of(recipe.getOutputContainer());
         this.brewTime = recipe.getBrewTime();
         this.needWater = recipe.getNeedWater();
@@ -67,7 +64,7 @@ public class KettleEMIRecipe implements EmiRecipe {
 
     @Override
     public List<EmiStack> getOutputs() {
-        return containerOutput.getEmiStacks();
+        return output.getEmiStacks();
     }
 
     @Override
@@ -112,7 +109,7 @@ public class KettleEMIRecipe implements EmiRecipe {
         } else {
             widgets.addDrawable(5, 23, 5, 11, (draw, mouseX, mouseY, delta) -> {
 
-            }).tooltipText(FarmersRespite.i18n("rei.brewing.noWater").toFlatList());;
+            }).tooltipText(FarmersRespite.i18n("rei.brewing.noWater").toFlatList());
         }
     }
 }

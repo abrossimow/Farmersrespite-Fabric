@@ -9,7 +9,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 
 public class FRRecipeSerializers {
-    //    public static final RecipeSerializer<KettleRecipe> KETTLE = KettleRecipe.SERIALIZER;
+//    public static final RecipeSerializer<KettleRecipe> KETTLE = KettleRecipe.SERIALIZER;
 //    public static final RecipeType<KettleRecipe> BREWING = KettleRecipe.TYPE;
     public static final RecipeSerializer<KettleRecipe> KETTLE = registerRecipeSerializer("brewing", KettleRecipe.SERIALIZER);
     public static final RecipeType<KettleRecipe> BREWING = KettleRecipe.TYPE;

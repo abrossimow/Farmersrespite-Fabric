@@ -27,8 +27,8 @@ public class KettleRecipe implements Recipe<Container> {
 
     private final ResourceLocation id;
     private final String group;
-    private final NonNullList<Ingredient> inputItems;
-    private final ItemStack output;
+    public final NonNullList<Ingredient> inputItems;
+    public final ItemStack output;
     public final ItemStack container;
     private final float experience;
     public final int brewTime;
